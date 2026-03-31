@@ -11,7 +11,19 @@ SNIPLINK is a professional-grade, obsidian-inspired URL management system built 
 
 ---
 
-## 🚀 The Core Logic: How It Works
+## 🇮🇳 Samajhie SNIPLINK Kaise Kaam Karta Hai? (Hinglish Guide)
+
+Chaliye simple words mein samajhte hain ki yeh system kaam kaise karta hai:
+
+1. **The Input (Aapka Link)**: Sabse pehle aap apna bada aur complex Link (e.g., Google Drive ya Portfolio) box mein paste karte hain.
+2. **The Transformation (Shortening Logic)**: Hamara system us link ko ek unique aur Chota "Proxy Key" deta hai (e.g., `snip.ly/RE9RUB`). Yeh key hamare **Supabase Database** mein safe ho jati hai.
+3. **The Interception (Click Tracking)**: Jab bhi koi us naye chote link par click karta hai, hamara system pehle us user ka "Click" detect karta hai aur usey **Real-Time** log kar leta hai. 
+4. **The Redirection (Final Destination)**: Click log karne ke baad, instantly system usey uske asli (Original) link par bhej deta hai. Yeh itna fast hota hai ki user ko pata bhi nahi chalta!
+5. **The Analytics (Aapka Dashboard)**: Jo clicks save hue the, unka data hum charts (Area, Line, Pie) mein convert karte hain taaki aap dekh sakein ki aapka link kitna hit hai!
+
+---
+
+## 🚀 The Core Logic: How It Works (Technical)
 
 SNIPLINK operates on a **Proprietary Proxy-Redirection Engine**. Here is the high-level logic that powers the archival:
 
@@ -45,14 +57,13 @@ graph TD
 
 ---
 
-## 📈 Metric Dictionary (Simple Terms)
+## 📊 Metric Dictionary
 
-| Metric | Scientific Logic | In Simple Words |
+| Metric | Scientific Logic | Hindi Version |
 | :--- | :--- | :--- |
-| **Impressions** | $\sum C$ (Sum of Total Click Logs) | Total clicks you've gained. |
-| **Retention Velocity** | $\frac{\Delta C}{\Delta T}$ (Rate of popularity change) | Is your link trending up or down? |
-| **Archival Pulse** | $C_{last24h}$ (Last 24H aggregated) | How your link performed today, hour-by-hour. |
-| **Asset Age** | $T_{now} - T_{created}$ | How long your link has been protected. |
+| **Impressions** | $\sum C$ (Sum of Total Click Logs) | Kul kitne clicks mile. |
+| **Retention Velocity** | $\frac{\Delta C}{\Delta T}$ (Rate of popularity change) | Link kitna fast fail raha hai. |
+| **Pulse** | $C_{last24h}$ (Last 24H aggregated) | Aaj ka report, ghante ke hisaab se. |
 
 ---
 
@@ -61,7 +72,6 @@ graph TD
 This suite is built with a premium, editorial-first aesthetic:
 - **Typography**: Paired **Syne** (Bold Headlines) and **Sora** (Surgical Body Text).
 - **Interface**: Deep-space obsidian dark mode with glassmorphic cards.
-- **Micro-Animations**: Kinetic buttons and high-fidelity Rechart transitions.
 
 ---
 
@@ -71,16 +81,7 @@ Developed and maintained by **Tushar Jain**.
 
 - **Portfolio**: [tusharjain.in](https://tusharjain.in)
 - **Email**: [jaint0910@gmail.com](mailto:jaint0910@gmail.com)
-- **Vision**: Creating software that is as beautiful as it is functional.
-
----
-
-## 🔧 Deployment Guide
-
-1. **Clone**: `git clone https://github.com/Tusharjain-19/url-shortener.git`
-2. **Install**: `npm install`
-3. **Configure**: Set up `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` in `.env`.
-4. **Launch**: `npm run dev`
+- **Vision**: Software as art.
 
 ---
 
