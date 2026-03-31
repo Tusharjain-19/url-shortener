@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Sora:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 343 100% 77%;
+    --primary-foreground: 343 60% 20%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 343 100% 95%;
+    --accent-foreground: 343 100% 77%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 343 100% 77%;
+    --radius: 2rem;
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'Sora', sans-serif;
+  }
+
+  .dark {
+    --background: 260 15% 4%;
+    --foreground: 210 20% 98%;
+    --card: 260 10% 7%;
+    --card-foreground: 210 20% 98%;
+    --popover: 260 10% 7%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 343 100% 77%;
+    --primary-foreground: 343 60% 20%;
+    --secondary: 260 8% 10%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 260 8% 10%;
+    --muted-foreground: 260 5% 65%;
+    --accent: 343 30% 12%;
+    --accent-foreground: 343 100% 77%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 260 8% 14%;
+    --input: 260 8% 14%;
+    --ring: 343 100% 77%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.04em;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/40 backdrop-blur-[32px] border border-white/[0.08] shadow-[0_32px_128px_-16px_rgba(0,0,0,0.5)];
+  }
+  .glass-input {
+    @apply bg-white/[0.03] backdrop-blur-md border border-white/[0.05] focus:border-primary/50 focus:ring-4 focus:ring-primary/10 transition-all duration-300;
+  }
+  .aesthetic-button {
+    @apply h-14 rounded-full font-bold text-lg px-10 transition-all duration-500 hover:scale-[1.03] active:scale-95 hover:shadow-[0_0_40px_-5px_rgba(255,137,171,0.4)];
+  }
+}
