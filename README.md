@@ -1,67 +1,67 @@
 # ✂️ SNIPLINK — High-Fidelity URL Archival & Analytics Suite
 
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Lucide](https://img.shields.io/badge/Lucide_Icons-FF89AB?style=for-the-badge&logo=lucide&logoColor=white)
+
 SNIPLINK is a professional-grade, obsidian-inspired URL management system built for precision, elegance, and deep analytics. Developed as a high-end alternative to generic link shorteners, it treats each link as a curated digital asset.
 
 ---
 
-## 🚀 The Essence of SNIPLINK
+## 🚀 The Core Logic: How It Works
 
-**SNIPLINK** is more than just a shortener; it's a **Digital Asset Archive**. It takes your long, complex URLs and transforms them into branded, human-readable "Proxy Paths," while simultaneously tracking every interaction with surgical precision.
+SNIPLINK operates on a **Proprietary Proxy-Redirection Engine**. Here is the high-level logic that powers the archival:
 
-### 💡 How It Works (The Simple Version)
-1. **The Input**: You provide a long URL (e.g., a complex Google Drive link).
-2. **The Transformation**: SNIPLINK generates a unique, elegant slug (like `snip.ly/RE9RUB`).
-3. **The Redirection**: When someone clicks this link, SNIPLINK instantly logs their metadata (anonymous click time) and redirects them to the destination.
-4. **The Intelligence**: Every click feeds into your **Pulse Dashboard**, generating beautiful charts that tell you *exactly* when your links are performing.
+### 1. The Archival Handshake
+When you submit a long URL, the system performs a **Collision-Resistant Slug Generation**. It hashes your URL (or uses your custom proxy key) to create a unique identifier in the Supabase PostgreSQL vault.
 
----
+### 2. The Pulse Interception
+Every time a user visits your shortened link:
+- **Phase A (Capture)**: The Edge Function/Frontend interceptor identifies the unique slug.
+- **Phase B (Logging)**: A real-time `click_log` entry is created, capturing the timestamp.
+- **Phase C (Redirection)**: The server performs a `302 Temporary Redirect` to the destination URL stored in the vault.
 
-## 📈 Archival Pulse — Advanced Analytics
-
-SNIPLINK uses an internal engagement scoring engine to calculate the "Archival Health" of your links:
-
-### 1. Retention Velocity ($V_r$)
-Calculated as the rate of change of clicks over a rolling 7-day window.
-$$V_r = \frac{\Delta C}{\Delta T}$$
-*Simple terms: Is the link getting more popular over time?*
-
-### 2. Engagement Density ($D_e$)
-Measures click concentration relative to the asset's age.
-$$D_e = \log_{10}(C_{total} + 1) / (\text{days since creation})$$
-*Simple terms: Is the link "loud" and generating high impact for its age?*
+### 3. Analytics Synthesis (The "Answer Logic")
+The dashboard doesn't just show clicks; it performs an **In-Memory Time-Series Aggregation**:
+- It groups clicks by your selected window (24H Pulse, 7D, 14D, etc.).
+- It calculates the **Retention Velocity** to determine if your link is gaining momentum or decaying.
 
 ---
 
-## 🎨 Design Philosophy: "Obsidian Edition"
+## 📈 Visualizing the link lifecycle
 
-This suite is built with an editorial, premium aesthetic:
-- **Typography**: Paired **Syne** (for impact) and **Sora** (for readability).
-- **Glassmorphism**: High-transparency UI cards with backdrop blurring.
-- **Pulse Filters**: Surgical time-range filters from 24H "Pulse" to 60-day archival trends.
-- **Dynamic Synchronicity**: Seamless transitions between Dark (Obsidian) and Light themes.
-
----
-
-## 🧱 The Metric Dictionary
-
-| Metric | What it means in simple words |
-| :--- | :--- |
-| **Impressions** | Total number of times your link was successfully clicked. |
-| **Pulse** | The "heartbeat" of your link—clicks tracked hour-by-hour for the last 24H. |
-| **Proxy Path** | The new, short, and professional name of your link. |
-| **Resource Path** | The original, long destination where your content lives. |
+```mermaid
+graph TD
+    A[Original Resource Path] -->|Input| B[SNIPLINK Engine]
+    B -->|Hash/Custom Key| C[Supabase Asset Vault]
+    C -->|Redirection| D[Shortened URL Share]
+    D -->|Click Interaction| E{Pulse Monitor}
+    E -->|Real-time Log| F[Engagement Dashboard]
+    E -->|302 Redirect| G[Final Destination]
+```
 
 ---
 
-## 🛠️ Technical Architecture
+## 📈 Metric Dictionary (Simple Terms)
 
-| Stack | Technology |
-| :--- | :--- |
-| **Frontend** | React 18 + Vite |
-| **Styling** | Tailwind CSS + Lucide Icons |
-| **Backend** | Supabase (PostgreSQL + Real-time Auth) |
-| **Charting** | Recharts (High-Fidelity 4G Graphics) |
-| **State** | React Context + TanStack Query |
+| Metric | Scientific Logic | In Simple Words |
+| :--- | :--- | :--- |
+| **Impressions** | $\sum C$ (Sum of Total Click Logs) | Total clicks you've gained. |
+| **Retention Velocity** | $\frac{\Delta C}{\Delta T}$ (Rate of popularity change) | Is your link trending up or down? |
+| **Archival Pulse** | $C_{last24h}$ (Last 24H aggregated) | How your link performed today, hour-by-hour. |
+| **Asset Age** | $T_{now} - T_{created}$ | How long your link has been protected. |
+
+---
+
+## 🎨 Design Identity: "Obsidian Edition"
+
+This suite is built with a premium, editorial-first aesthetic:
+- **Typography**: Paired **Syne** (Bold Headlines) and **Sora** (Surgical Body Text).
+- **Interface**: Deep-space obsidian dark mode with glassmorphic cards.
+- **Micro-Animations**: Kinetic buttons and high-fidelity Rechart transitions.
 
 ---
 
@@ -70,20 +70,18 @@ This suite is built with an editorial, premium aesthetic:
 Developed and maintained by **Tushar Jain**.
 
 - **Portfolio**: [tusharjain.in](https://tusharjain.in)
-- **Role**: Full-Stack Architect & UI Designer
-- **Contact**: [jaint0910@gmail.com](mailto:jaint0910@gmail.com)
+- **Email**: [jaint0910@gmail.com](mailto:jaint0910@gmail.com)
+- **Vision**: Creating software that is as beautiful as it is functional.
 
 ---
 
-## 🔧 Deployment & Safety
+## 🔧 Deployment Guide
 
-1. Clone the repository.
-2. `npm install`.
-3. Configure your local `.env`. 
-   > [!IMPORTANT]
-   > Ensure you never share your private Supabase keys. A `.env.example` is provided for reference.
-4. `npm run dev` to launch the Obsidian Suite.
+1. **Clone**: `git clone https://github.com/Tusharjain-19/url-shortener.git`
+2. **Install**: `npm install`
+3. **Configure**: Set up `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` in `.env`.
+4. **Launch**: `npm run dev`
 
 ---
 
-&copy; 2026 SNIPLINK. Built for the modern web by **Tushar Jain**.
+&copy; 2026 SNIPLINK. Built with passion by **Tushar Jain**.
